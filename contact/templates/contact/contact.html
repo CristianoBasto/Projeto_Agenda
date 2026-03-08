@@ -1,0 +1,39 @@
+{% extends "global/base.html" %}
+
+
+<body>
+{% block content %}
+  <h1>{{contacts.first_name}} {{contacts.last_name}}</h1>
+  
+ <p><b>ID : </b>{{contacts.id}}</p>
+ <p><b>EMAIL : </b>{{contacts.email}}</p>
+ <p><b>PHONE : </b>{{contacts.phone}}</p>
+ <p><b>DATA : </b>{{contacts.created_date}}</p>
+ <p><b>DESCRIÇÃO : </b>{{contacts.description}}</p>
+  <p><b>Categoria : </b>{{contacts.category}}</p>
+    
+  <div class="form-group">
+  {% if contacts.picture %}
+    <p>
+    <img src={{contacts.picture.url}} alt={{contacts.first_name}} {{contacts.last_name}}>
+    </p>
+  {% endif %}
+  </div>
+
+    {% if user.is_authenticated %}
+      <div class="contact-links">
+        <a class="btn btn-link" href={% url "contact:update" contacts.id %}>UPDATE</a>
+        
+        <form 
+        action={% url "contact:delete" contacts.id %}
+        method="post"
+        >
+        {% csrf_token %}
+        <button class="btn btn-link btn-delete " type="submit">DELETAR</button>
+        </form>
+
+      </div>
+     {% endif %}
+  
+{% endblock content %}
+</body>

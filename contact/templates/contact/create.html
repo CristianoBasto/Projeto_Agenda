@@ -1,0 +1,43 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+ <div class="form-wrapper">
+    <h2>CREATE CONTACT</h2>
+    <form 
+    
+    action={{form_action}}
+    method="post"
+    enctype="multipart/form-data"
+    >
+
+    {% csrf_token %}
+
+    <div class="form-content">
+
+         {% for fields in form %}
+
+       <div class="form-group">
+        <label for="{{fields.id_for_label}}"> {{fields.label}}</label>
+        {{fields}}
+        {{fields.errors}}
+
+         {% if fields.name == 'picture' and fields.value.url %}
+         
+         <p> <img src={{fields.value.url}} alt=""></p>
+         {% endif %}
+      {% endfor %}
+    </div>
+
+    </div>
+
+    <div class="form-content">
+       <div class="form-group">
+
+        <button class="btn" type="submit">ENVIAR</button>
+
+       </div>
+    </div>
+
+    </form>
+ </div>
+{% endblock content %}
