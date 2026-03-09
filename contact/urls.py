@@ -7,11 +7,12 @@ app_name = 'contact'
 
 urlpatterns = [
 
-    # Contact (CRUD)
-
-    path("<int:contact_id>/", contact_views.contact, name='contact'),
-    path("search/", contact_views.search, name='search'),
     path("", contact_views.index, name='index'),
+    path("search/", contact_views.search, name='search'),
+  
+
+    # Contact (CRUD)
+    path("<int:contact_id>/", contact_views.contact, name='contact'),
     path("contact/create/",  contact_forms.create, name='create'),
     path("<int:contact_id>/update", contact_forms.update, name='update'),
     path("<int:contact_id>/delete", contact_forms.delete, name='delete'),

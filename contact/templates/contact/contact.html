@@ -20,7 +20,7 @@
   {% endif %}
   </div>
 
-    {% if user.is_authenticated %}
+    {% if user == contacts.owner %}
       <div class="contact-links">
         <a class="btn btn-link" href={% url "contact:update" contacts.id %}>UPDATE</a>
         
@@ -28,6 +28,7 @@
         action={% url "contact:delete" contacts.id %}
         method="post"
         >
+        
         {% csrf_token %}
         <button class="btn btn-link btn-delete " type="submit">DELETAR</button>
         </form>
