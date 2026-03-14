@@ -46,8 +46,8 @@ sudo apt install git -y
 ### Configurando o git
 
 ```
-git config --global user.name 'Seu nome'
-git config --global user.email 'seu_email@gmail.com'
+git config --global user.name 'cristiano'
+git config --global user.email 'cristhianobastos@gmail.com'
 git config --global init.defaultBranch main
 ```
 
@@ -74,7 +74,7 @@ git push agendarepo main -u # erro
 No seu computador local
 
 ```
-git remote add agendarepo usuario@IP_SERVIDOR:~/agendarepo
+git remote add agendarepo azureuser@20.86.13.127:~/agendarepo
 git push agendarepo main
 ```
 
@@ -90,11 +90,11 @@ git pull agendarepo main
 ```
 sudo -u postgres psql
 
-postgres=# create role usuario_agenda with login superuser createdb createrole password 'senha_usuario_agenda';
+postgres=# create role cristiano with login superuser createdb createrole password 'maysab05';
 CREATE ROLE
-postgres=# create database projeto_agenda with owner usuario_agenda;
+postgres=# create database projeto_agenda with owner cristiano;
 CREATE DATABASE
-postgres=# grant all privileges on database projeto_agenda to usuario_agenda;
+postgres=# grant all privileges on database projeto_agenda to cristiano;
 GRANT
 postgres=# \q
 

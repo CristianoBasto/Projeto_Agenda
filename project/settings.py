@@ -135,5 +135,5 @@ try:
 
     from project.local_settings import *
 
-except Exception:
+except ImportError:
     ...
