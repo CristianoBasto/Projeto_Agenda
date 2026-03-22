@@ -2,8 +2,8 @@
 
 
 {% block content %}
-<div class="responsive-table">
-  <table class="contacts-table">
+<div class="responsive-table" "texto-home">
+  {% comment %} <table class="contacts-table">
     <caption class="table-caption">
       Contacts
     </caption>
@@ -58,6 +58,14 @@
             <a href="?page={{ page_obj.next_page_number }}">next</a>
             <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
-    </span>
-</div>
+    </span> {% endcomment %}
+  
+  </div>
+
+  <div class="img-logo">
+    <h1>Agenda Eletrônio para testes.</h1>
+    <p>Projeto Criado usando o Djando do Python.Para usar, faça o seu resgitro e posteriormente faça login com seus dados.</p>
+     
+  </div>
 {% endblock content %}
+ 

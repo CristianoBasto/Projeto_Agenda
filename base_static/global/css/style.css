@@ -337,3 +337,13 @@ svg {
 .btn-delete {
   background: tomato;
 }
+
+
+.img-logo{
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  width: 95%;
+  height: 450px;
+
+}

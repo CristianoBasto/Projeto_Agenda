@@ -10,7 +10,7 @@
        
         <a href="{% url 'contact:index' %}" class="header-link">
 
-        <h2>Agenda Eletronica</h2>
+        <h2>Agenda Eletrônica</h2>
          </a>
 
         {% endif %}
@@ -22,7 +22,7 @@
       {% if user.is_authenticated %}
 
        <li class="menu-item">
-         <a href={% url "contact:create" %} class="menu-link">Create</a>
+         <a href={% url "contact:create" %} class="menu-link">Novo</a>
        </li>
 
        <li class="menu-item">
@@ -30,13 +30,13 @@
        </li>
 
        <li class="menu-item">
-         <a href={% url "contact:logout" %} class="menu-link">Logout</a>
+         <a href={% url "contact:logout" %} class="menu-link">Sair</a>
        </li>
         
       {% else %}
 
       <li class="menu-item">
-          <a href={% url "contact:register" %} class="menu-link">Register</a>
+          <a href={% url "contact:register" %} class="menu-link">Registrar</a>
         </li>
 
       <li class="menu-item">
@@ -47,6 +47,8 @@
 
      </ul>
     </nav>
+
+    {% if user.is_authenticated %}
 
     <div class="search">
       <form
@@ -62,6 +64,8 @@
         >
 
     </form>
+
+    {% endif %}
     
     </div>
    </header>
